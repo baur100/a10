@@ -7,14 +7,16 @@ public class Pool {
     public int depth;
 
     public void volume() {
-        System.out.println("The volume "+name+" pool is "+(length*wide* depth));
+        System.out.println("The volume of "+name+" pool is "+(length*wide* depth)+" feet");
     }
 
     public void safety() {
         if (depth > 3) {
-            System.out.println("The depth of " + name + " is " + depth + " , it is safe to dive");
+            System.out.println("The depth of " + name + " is " + depth + " feet , it is safe to dive");
         }
-        System.out.println("The depth of " + name + " is " + depth + " , it is NOT safe to dive");
+        if (depth <= 3) {
+            System.out.println("The depth of " + name + " is " + depth + " feet , it is NOT safe to dive");
+        }
     }
 
 
