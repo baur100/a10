@@ -12,10 +12,10 @@ public class Pool {
 
     public void safety() {
         if (depth > 3) {
-            System.out.println("The depth of " + name + " is " + depth + " feet , it is safe to dive");
+            System.out.println("The depth of the " + name + " is " + depth + " feet , it is safe to dive");
         }
         if (depth <= 3) {
-            System.out.println("The depth of " + name + " is " + depth + " feet , it is NOT safe to dive");
+            System.out.println("The depth of the " + name + " is " + depth + " feet , it is NOT safe to dive");
         }
     }
 
