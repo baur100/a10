@@ -6,13 +6,10 @@ public class Vehicle {
     public int year;
     public String color;
 
-    public void drive() {
-        System.out.println(make+ " "+model +" is driving");
+    public void drive(){
+        System.out.println(make+ " "+ model +" is driving");
     }
-    public void honk() {
-        System.out.println(make+ " "+model +" is honking");
+    public void beep(){
+        System.out.println(color+" car is beeping");
     }
-
 }
-
-

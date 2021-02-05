@@ -5,9 +5,7 @@ public class Person {
     public String lastName;
     public int yearOfBirth;
 
-    public void hello(String aName) {
-        System.out.println(name+" is saying hello to "+aName);
+    public void hello(String aName){
+        System.out.println(name + " saying hello to " +aName);
     }
 }
-
-
