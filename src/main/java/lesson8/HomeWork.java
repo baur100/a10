@@ -1,6 +1,6 @@
-package hw7;
+package lesson8;
 
-public class HomeWork7 {
+public class HomeWork {
     public static void main(String[] args) {
 
     }
