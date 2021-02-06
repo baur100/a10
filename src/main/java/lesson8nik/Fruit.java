@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8nik;
 
 public class Fruit {
     public String name;

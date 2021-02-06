@@ -1,4 +1,4 @@
-package lesson7;
+package lesson7nik;
 
 public class Hello {
     public static void main(String[] args) {
