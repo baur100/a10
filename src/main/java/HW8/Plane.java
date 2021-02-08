@@ -12,7 +12,11 @@ public class Plane {
 
     }
 
+    public void toCountry(String countryName){
+        System.out.println(name+" is flying to "+countryName);
 
-
-
+    }
+    public void twoDistinations (String country1, String country2){
+        System.out.println(name+ " is flying to "+country1+" and "+country2);
+    }
 }
