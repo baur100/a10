@@ -30,6 +30,7 @@ public class App {
         Suhoi.numberOfsets = 150;
 
         Suhoi.info();
+        Suhoi.twoDistinations("Peru","England");
 
 
         Plane Boing = new Plane();
@@ -40,6 +41,7 @@ public class App {
         Boing.numberOfsets = 350;
 
         Boing.info();
+        Boing.toCountry("Israel");
 
 
 
@@ -51,6 +53,7 @@ public class App {
 
         Russia.infoMaker("Suhoi");
         Russia.distination1("Suhoi");
+
 
 
         Country USA = new Country();
