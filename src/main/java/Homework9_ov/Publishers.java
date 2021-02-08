@@ -1,0 +1,4 @@
+package Homework9_ov;
+
+public enum Publishers { PENGUIN_RANDOM_HOUSE, HACHETTE_LIVRE, MACMILLIAN,SIMON_AND_SCHUSTER
+}
