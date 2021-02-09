@@ -1,6 +1,6 @@
-package HM9;
+package HM10;
 
-public class Zoo extends Animal{
+public class Zoo extends Animal {
     private String ZooName;
 
     public Zoo(String name, String color, int id,  String ZooName) {

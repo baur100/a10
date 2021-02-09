@@ -1,4 +1,6 @@
-package HM9;
+package NewHM9;
+
+import NewHM9.Apartments;
 
 public class NewBuilding {
     public static void main(String[] args) {

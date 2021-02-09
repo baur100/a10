@@ -1,4 +1,4 @@
-package HM9;
+package HM10;
 
 public class Animal {
        protected String name;

@@ -1,4 +1,6 @@
-package HM9;
+package HM10;
+
+import HM10.Animal;
 
 public class AdoptionCenter extends Animal {
 

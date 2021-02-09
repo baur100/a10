@@ -1,4 +1,4 @@
-package HM9;
+package NewHM9;
 
 public class Cars {
     public String brand;
