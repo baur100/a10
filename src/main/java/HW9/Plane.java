@@ -65,7 +65,7 @@ public class Plane {
     }
     public void printinfo(){//Метод Принт класс для распечатки всех полей
         System.out.println("Name = "+this.name+", Model = "+this.model+", Manufacture = "+this.manufacturer+", Country = "+
-        this.country+", Number of sets = "+this.numberOfsets+", Users are ");
+        this.country+", Number of sets = "+this.numberOfsets+", Users are+ ");
         for(String v : this.users){
             System.out.println(v);
         }
