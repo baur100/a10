@@ -1,4 +1,4 @@
-package hw7;
+package HW7;
 
 import java.util.Arrays;
 

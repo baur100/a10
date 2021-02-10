@@ -6,7 +6,7 @@ public class Shop {
     public int hours;
 
     public String getInfo(){
-        String time=". Time of work per day: ";
+        String time=". Time of Work per day: ";
         return name+address+time+hours;
     }
 }

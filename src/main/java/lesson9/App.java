@@ -10,7 +10,7 @@ public class App {
         System.out.println(anna.name);
 
         Person1 jane = new Person1("Jane","Fonda",1980);
-//        jane.setName("Jane");
+        jane.setName("Jane");
         System.out.println(jane.getName());
         jane.setYear(1950);
         Person1 mira = new Person1("Mira","Smith");
