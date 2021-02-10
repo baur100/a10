@@ -3,7 +3,7 @@ package homeWork09;
 import java.util.Arrays;
 
 public class Castle extends Mansion{
-    public String[] extra;
+    protected String[] extra;
 
     public Castle(String name, int area, int floors, String[] tenants, Fenses fence, String[] extra) {
         super(name, area, floors, tenants, fence);

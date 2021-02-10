@@ -3,9 +3,9 @@ package homeWork09;
 import java.util.Arrays;
 
 public class Forecast {
-    public String location;
-    public int[] forecast;
-    public Condition[] conditions;
+    private String location;
+    private int[] forecast;
+    private Condition[] conditions;
 
     public Forecast(String location, int[] forecast, Condition[] conditions) {
         this.location=location;
