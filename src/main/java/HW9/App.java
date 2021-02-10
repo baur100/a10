@@ -3,7 +3,7 @@ package HW9;
 public class App {
     public static void main(String[] args) {
 
-        Country russia=new Country("Russia","Eurasia",150000000,6000000);// Используем 1 ый конструктор
+        Country russia=new Country("Russia","Eurasia",150000000,6000000);// Исп.1 й констр.
 //        russia.setName("Russia");
 //        russia.setContinent("Eurasia");
 //        russia.setPopulation(150000000);
@@ -53,14 +53,12 @@ public class App {
 
         russian.printinfo(); //Вызываем печать всех полей из класса Plane
 
-
-        Plane american=new Plane("Boing", 787,"Company Boing","USA", 250,users);// Constructor 4
+        Plane american=new Plane("Boing", 787,"Company Boing","USA", 250,users);// Constr 4
         System.out.println("Info about of the American plan = "+american.getName()+
                 ", Model = "+american.getModel()+
                 ", Manufacturer = "+american.getManufacturer()+
                 ", Country = "+american.getCountry()+
                 ", NumbersOfsets = "+american.getNumberOfsets()+".");
-
 
         Plane brazilian=new Plane();
         brazilian.setName("Embraer");
