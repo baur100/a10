@@ -1,12 +1,15 @@
 package HWPF10;
 
 public class Tshirt {
-     private  String brand;
-     private Colors color;
-     private String size;
-     public Tshirt(String brand,String size,Colors color){
+    private String brand;
+    private String model;
+    private Colors color;
 
-     }
+    public Tshirt(String brand, String model, Colors color) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+    }
 
     public String getBrand() {
         return brand;
@@ -16,6 +19,14 @@ public class Tshirt {
         this.brand = brand;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public Colors getColor() {
         return color;
     }
@@ -23,15 +34,16 @@ public class Tshirt {
     public void setColor(Colors color) {
         this.color = color;
     }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
 }
+
+
+
+
+
+
+
+
+
 
 
 

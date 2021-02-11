@@ -1,7 +1,7 @@
 package HWPF10;
 
 public enum Brand {
-    REEBOK,
+    Reebok,
     NIKE,
-    GEOX
+    ADIDAS
 }
