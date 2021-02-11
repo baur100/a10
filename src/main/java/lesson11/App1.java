@@ -21,6 +21,5 @@ public class App1 {
         String nn= macys.getManagers()[1].getName().getFirstName();
         System.out.println(nn);
 
-
     }
 }
