@@ -1,17 +1,18 @@
-package hw11;
+package HomeWork11;
 
-public class PowerSuply {
+public class Keyboard {
     private String brand;
     private String model;
-    private int wattage;
+    private int keys;
 
-    public PowerSuply(String brand, String model, int wattage) {
+
+    public Keyboard(String brand, String model, int keys) {
         this.brand = brand;
         this.model = model;
-        this.wattage = wattage;
+        this.keys = keys;
     }
 
-    public PowerSuply () {}
+    public Keyboard () {}
 
     public String getBrand() {
         return brand;
@@ -29,11 +30,11 @@ public class PowerSuply {
         this.model = model;
     }
 
-    public int getWattage() {
-        return wattage;
+    public int getKeys() {
+        return keys;
     }
 
-    public void setWattage(int wattage) {
-        this.wattage = wattage;
+    public void setKeys(int keys) {
+        this.keys = keys;
     }
 }
