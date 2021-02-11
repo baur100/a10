@@ -1,4 +1,4 @@
-package hw11;
+package HomeWork11;
 
 public class SystemBlock {
     private MotherBoard motherBoard;
