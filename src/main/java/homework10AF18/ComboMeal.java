@@ -1,11 +1,13 @@
 package homework10AF18;
 
+import java.util.Arrays;
+
 public class ComboMeal extends Sandwiches{
     private String comboName;
-    private Beverages beverage;
+    private Beverages[] beverage;
     private int amount;
 
-    public ComboMeal(String typeMeat, String roast, double ounce, String cheese, Souses souse, String comboName,Beverages beverage,int amount){
+    public ComboMeal(String typeMeat, String roast, double ounce, String cheese, Souses souse, String comboName,Beverages[] beverage,int amount){
         super(typeMeat, roast, ounce, cheese, souse);
         this.comboName=comboName;
         this.beverage=beverage;
@@ -18,11 +20,11 @@ public class ComboMeal extends Sandwiches{
         return comboName;
     }
 
-    public Beverages getBeverage() {
-        return beverage;
+    public String getBeverage() {
+        return Arrays.toString(beverage);
     }
 
-    public void setBeverage(Beverages beverage) {
+    public void setBeverage(Beverages[] beverage) {
         this.beverage = beverage;
     }
 
