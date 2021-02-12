@@ -24,4 +24,12 @@ public class MotherBoard {
     public void setChipset(String chipset) {
         this.chipset = chipset;
     }
+
+    @Override
+    public String toString() {
+        return "MotherBoard{" +
+                "brand='" + brand + '\'' +
+                ", chipset='" + chipset + '\'' +
+                '}';
+    }
 }

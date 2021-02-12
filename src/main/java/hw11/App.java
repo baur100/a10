@@ -11,12 +11,15 @@ public class App {
                         new VideoAdapter("Gigabyte","GeForce",4),
                         new PowerSuply("Evga","Fan",650),
                         new Disk("HDD","Dell",500)));
+        System.out.println(pc1.toString());
         // Computer 2
 
 
 
         Keyboard keyboard1 = new Keyboard("AcerA","AcRE","Gaming");
+        System.out.println(keyboard1.toString());
         Mouse mouse = new Mouse("Dell","DellQ","Gaming");
+        System.out.println(mouse.toString());
         Monitor monitor = new Monitor("Samsung","Srta",1920);
         MotherBoard motherBoard = new MotherBoard("Asus","Amd");
         VideoAdapter videoAdapter = new VideoAdapter("Zotac","GeForse1050",4);
@@ -24,9 +27,10 @@ public class App {
         Disk disk = new Disk("SSD","Toshiba",840);
         SystemBlock systemBlock = new SystemBlock(motherBoard,videoAdapter,powerSuply,disk);
         Computer pc2 = new Computer(keyboard1,mouse,monitor,systemBlock);
+        System.out.println(pc2.toString());
 
 
         // Print CPU model from computer
-        System.out.println(pc1.getSystemBlock().getMotherBoard().getChipset());
+      //  System.out.println(pc1.getSystemBlock().getMotherBoard().getChipset());
     }
 }

@@ -34,4 +34,13 @@ public class Monitor {
     public void setResolution(int resolution) {
         this.resolution = resolution;
     }
+
+    @Override
+    public String toString() {
+        return "Monitor{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", resolution=" + resolution +
+                '}';
+    }
 }

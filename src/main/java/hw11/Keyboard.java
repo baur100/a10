@@ -34,4 +34,13 @@ public class Keyboard {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Keyboard{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

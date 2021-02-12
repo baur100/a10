@@ -34,4 +34,13 @@ public class Disk {
     public void setMemory(int memory) {
         this.memory = memory;
     }
+
+    @Override
+    public String toString() {
+        return "Disk{" +
+                "type='" + type + '\'' +
+                ", brand='" + brand + '\'' +
+                ", memory=" + memory +
+                '}';
+    }
 }

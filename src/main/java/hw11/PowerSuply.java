@@ -34,4 +34,13 @@ public class PowerSuply {
     public void setPower(int power) {
         this.watt = power;
     }
+
+    @Override
+    public String toString() {
+        return "PowerSuply{" +
+                "brand='" + brand + '\'' +
+                ", fan='" + fan + '\'' +
+                ", watt=" + watt +
+                '}';
+    }
 }

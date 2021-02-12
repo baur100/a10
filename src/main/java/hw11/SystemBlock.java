@@ -44,4 +44,14 @@ public class  SystemBlock {
     public void setDisk(Disk disk) {
         this.disk = disk;
     }
+
+    @Override
+    public String toString() {
+        return "SystemBlock{" +
+                "motherBoard=" + motherBoard +
+                ", videoAdapter=" + videoAdapter +
+                ", powerSuply=" + powerSuply +
+                ", disk=" + disk +
+                '}';
+    }
 }

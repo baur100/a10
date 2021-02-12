@@ -34,4 +34,13 @@ public class VideoAdapter {
     public void setMemory(int memory) {
         this.memory = memory;
     }
+
+    @Override
+    public String toString() {
+        return "VideoAdapter{" +
+                "brand='" + brand + '\'' +
+                ", gpu='" + gpu + '\'' +
+                ", memory=" + memory +
+                '}';
+    }
 }

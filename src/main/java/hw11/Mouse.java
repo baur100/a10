@@ -34,4 +34,13 @@ public class Mouse {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Mouse{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
