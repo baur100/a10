@@ -7,7 +7,7 @@ public class App {
         alex.name = "Alex";
         alex.lastName= "Geiman";
         alex.yearOfBirth=1999;
-//        System.out.println(alex.lastName);
+        System.out.println(alex.lastName);
         alex.hello("Jane");
 
         Person jane = new Person();
@@ -29,15 +29,15 @@ public class App {
         myCar.model="Prius";
         myCar.year=2015;
 
-//        myCar.beep();
-//        myCar.drive();
+        myCar.beep();
+        myCar.drive();
 
         Vehicle mazda6 = new Vehicle();
         mazda6.make = "Mazda";
         mazda6.model="6";
         mazda6.color="Red";
-//        mazda6.beep();
-//        mazda6.drive();
+        mazda6.beep();
+        mazda6.drive();
 
 
 

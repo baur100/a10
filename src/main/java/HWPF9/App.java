@@ -1,6 +1,6 @@
 package HWPF9;
 
-import HW_AA02_L8.Shoes;
+
 
 public class App {
     public static void main(String[] args) {
