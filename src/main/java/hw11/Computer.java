@@ -45,13 +45,5 @@ public class Computer {
         this.systemBlock = systemBlock;
     }
 
-    @Override
-    public String toString() {
-        return "Computer{" +
-                "keyboard=" + keyboard +
-                ", mouse=" + mouse +
-                ", monitors=" + monitors +
-                ", systemBlock=" + systemBlock +
-                '}';
-    }
+
 }

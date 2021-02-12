@@ -35,6 +35,7 @@ public class Disk {
         this.memory = memory;
     }
 
+
     @Override
     public String toString() {
         return "Disk{" +
