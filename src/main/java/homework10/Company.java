@@ -17,4 +17,17 @@ public class Company extends Jobboard {
     public String getDepartments(){
         return departments;
     }
+
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "departments='" + departments + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", time='" + time + '\'' +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }
+

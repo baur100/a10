@@ -12,6 +12,7 @@ public class Home10 {
 
 
         Company pepsi = new Company("Pepsi", "contract", "FullTime", "remote", "IT");
+//        System.out.println(pepsi.toString());
 
         CompanyInternat sweetwater = new CompanyInternat("Sweetwater", "contract", "PartTime", "remote", "legal", "Paris");
 

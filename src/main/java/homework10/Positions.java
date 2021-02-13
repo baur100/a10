@@ -1,5 +1,7 @@
 package homework10;
 
+import java.util.Arrays;
+
 public class Positions extends Jobboard {
         private String [] availability;
 
@@ -14,10 +16,10 @@ public class Positions extends Jobboard {
 
 
     public void printInfo(){
-        System.out.println("This " +name+ " available just on:");
-        for (String v: availability){
-            System.out.println(v);
-        }
+        System.out.println("This " +name+ " available just on:" + Arrays.toString(availability));
+//        for (String v: availability){
+//            System.out.println(v);
+//        }
     }
 
 
