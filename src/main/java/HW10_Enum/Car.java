@@ -1,5 +1,4 @@
 package HW10_Enum;
-
 public class Car {
     private String brand;
     private String model;

@@ -11,6 +11,8 @@ public class App {
         Plane1 russian=new Plane1("Tupolev",Type1.CARGO,Engine1.ULTRASONIC);
         System.out.println(russian.getEngine());
 
+        Plane1 france=new Plane1("Airbus",Type1.CARGO,Engine1.PISTON);
+        System.out.println(france.getBrand());
 
         Destinations[] destinations ={Destinations.BRAZIL,Destinations.CUBA,Destinations.USA};
         Ship2 canadian=new Ship2("Passenge","Victory",destinations);
