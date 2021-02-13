@@ -1,14 +1,12 @@
 package hw11;
 
-public class Mouse {
+public class PowerSupply {
     private String brand;
     private String model;
-    private String mouseType;
 
-    public Mouse(String brand, String model, String mouseType) {
+    public PowerSupply(String brand, String model) {
         this.brand = brand;
         this.model = model;
-        this.mouseType = mouseType;
     }
 
     public String getBrand() {
@@ -25,13 +23,5 @@ public class Mouse {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getMouseType() {
-        return mouseType;
-    }
-
-    public void setMouseType(String mouseType) {
-        this.mouseType = mouseType;
     }
 }
