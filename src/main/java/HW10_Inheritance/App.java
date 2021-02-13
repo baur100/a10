@@ -15,6 +15,9 @@ public class App {
         PasMecVehSUV myDad=new PasMecVehSUV
                 ("Ford","Explorer","USA", devices,10,"SUV");
 
-        System.out.println(myDad.getModel());
+        //System.out.println(myDad.getModel());
+
+        System.out.println(mycar.getDevices()[1]);
+        System.out.println(myDad.getType());
     }
 }
