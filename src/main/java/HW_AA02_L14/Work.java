@@ -5,7 +5,7 @@ import java.util.*;
 public class Work {
     static public void main(String[]args) {
 
-        Address add = new Address("111 Saratoga ave", "San Jose", "California", 95129);
+        Address addr = new Address("111 Saratoga ave", "San Jose", "California", 95129);
 
         List<Doctor> doctors = new ArrayList<>();
         doctors.add(new Doctor("Ivan", "Ivanov", Position.PSYCHIATRIST));
@@ -26,10 +26,10 @@ public class Work {
         acceptedInsuranses.add(InsuranseCompanies.KAISER);
         acceptedInsuranses.add(InsuranseCompanies.ROSGOSSTRAH);
 
-        Hospital stenford = new Hospital("Stanford", add, doctors, rooms, acceptedInsuranses);
-        add.printAddress();
+        Hospital stenford = new Hospital("Stanford", addr, doctors, rooms, acceptedInsuranses);
+        addr.printAddress();
         stenford.printInfo();
-        System.out.println(doctors);
+        stenford.printDoctors();
         System.out.println(rooms);
     }
 }

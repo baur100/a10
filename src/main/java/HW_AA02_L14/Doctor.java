@@ -35,4 +35,12 @@ public class Doctor {
         this.position = position;
     }
 
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", position=" + position +
+                '}';
+    }
 }

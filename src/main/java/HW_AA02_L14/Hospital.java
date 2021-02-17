@@ -60,4 +60,10 @@ public class Hospital {
     public void printInfo(){
         System.out.println("Name " + getHospitalName()+"\nInsuranses " + getAcceptedInsuranses());
     }
+
+    public void printDoctors(){
+        for (Doctor doc: getDoctors()){
+            System.out.println(doc);
+        }
+    }
 }

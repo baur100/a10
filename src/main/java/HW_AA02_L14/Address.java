@@ -46,6 +46,6 @@ public class Address {
     }
 
     public void printAddress(){
-        System.out.println("Address " + getStreetAddress());
+        System.out.println("Address: " + getStreetAddress()+", "+getTown()+", "+getState()+", "+getZip());
     }
 }
