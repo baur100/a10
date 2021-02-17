@@ -29,7 +29,7 @@ public class App1 {
         school.put(4, "College");
         school.replace(2, "SuperMiddle");
         //System.out.println(school);
-        //System.out.println(school.get(1));
+        System.out.println(school.get(1));
 
 //        for(Integer key : school.keySet()){
 //            System.out.println(key);
