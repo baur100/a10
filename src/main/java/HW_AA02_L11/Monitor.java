@@ -1,14 +1,15 @@
-package HW10_Inheritance;
+package HW_AA02_L11;
 
-public class Vehicle {
-    protected String brand;
-    protected String model;
-    protected String make;
+public class Monitor {
 
-    public Vehicle(String brand, String model, String make) {
+    public String brand;
+    public String model;
+    public int size;
+
+    public Monitor(String brand, String model, int size) {
         this.brand = brand;
         this.model = model;
-        this.make = make;
+        this.size = size;
     }
 
     public String getBrand() {
@@ -27,11 +28,11 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getMake() {
-        return make;
+    public int getSize() {
+        return size;
     }
 
-    public void setMake(String make) {
-        this.make = make;
+    public void setSize(int size) {
+        this.size = size;
     }
 }
