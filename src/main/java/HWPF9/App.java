@@ -5,9 +5,9 @@ package HWPF9;
 public class App {
     public static void main(String[] args) {
         Camera dsrl = new Camera("Canon","1DXm2",2018);
- //       dsrl.setMake("Canon");
- //       dsrl.setModel("1DXm2");
- //       dsrl.setYear(2018);
+        dsrl.setMake("Canon");
+        dsrl.setModel("1DXm2");
+        dsrl.setYear(2018);
 
         System.out.println("Make ="+dsrl.getMake() + "Model = " +dsrl.getModel()+"year = "+ dsrl.getYear());
 

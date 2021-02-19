@@ -6,7 +6,7 @@ public class AppEnuM {
 
 
         Level[] levels = {Level.BASE,Level.MIDLE,Level.HIGH};
-        EnumArray house = new EnumArray("Condo",levels);
+        EnumArray house = new EnumArray("Condo", levels);
         house.printClass();
 
     }
