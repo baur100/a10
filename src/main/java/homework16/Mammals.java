@@ -1,6 +1,8 @@
 package homework16;
 
-public interface Mammals {
+public interface Mammals extends Vertebrates {
+
+    void produceMilkForFeedingTheirYoung();
 
 
 

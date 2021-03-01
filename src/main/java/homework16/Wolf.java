@@ -1,13 +1,21 @@
 package homework16;
 
-public class Wolf implements Life {
-    public Wolf() {
+public class Wolf extends Carnivores {
+
+    @Override
+    public void animalsCanMove() {
+        System.out.println("Wolfs can Move");
+    }
+
+    @Override
+    public void canHunt() {
+        System.out.println("Wolfs are hunters");
+
     }
 
     @Override
     public void iCanBreath() {
         System.out.println("Wolfs can Breath");
-
     }
 
     @Override
@@ -19,59 +27,25 @@ public class Wolf implements Life {
     @Override
     public void iCanDie() {
         System.out.println("Wolfs can Die");
-
     }
 
     @Override
     public void iCanBreed() {
         System.out.println("Wolfs can Breed");
+    }
+
+    @Override
+    public void produceMilkForFeedingTheirYoung() {
+        System.out.println("Wolf feeding their young with milk");
 
     }
 
     @Override
-    public void animalsCanMove() {
-        System.out.println("Wolfs can Move");
-    }
-
-    @Override
-    public void coldBlooded() {
-        System.out.println("Wolfs are not cold-blooded");
+    public void haveSpine() {
+        System.out.println("Wolfs have spin");
 
     }
 
-    @Override
-    public void haveNumberOfShape() {
-        System.out.println("Wolfs can be different size");
 
-    }
-
-    @Override
-    public void canFly() {
-        System.out.println("Wolf can not fly");
-
-    }
-
-    @Override
-    public void Swims() {
-        System.out.println("Wolf can swim");
-
-    }
-
-    @Override
-    public void freeLivingInSoilOrWater() {
-        System.out.println("Wolf can live just on soil");
-
-    }
-
-    @Override
-    public void growIndoorOutdoor() {
-        System.out.println("Wolf can grow indoor and outdoor");
-
-    }
-
-    @Override
-    public void crawling() {
-        System.out.println("Wolfs can not crawling");
-    }
 
 }

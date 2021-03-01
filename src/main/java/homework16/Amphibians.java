@@ -1,5 +1,5 @@
 package homework16;
 
-public interface Amphibians {
+public interface Amphibians extends Vertebrates {
     void coldBlooded();
 }

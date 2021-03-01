@@ -1,78 +1,49 @@
 package homework16;
 
-public class Lion implements Life {
+public class Lion extends Carnivores {
 
     @Override
-    public void iCanBreath() {
-        System.out.println("Lion can Breath");
+    public void animalsCanMove() {
+        System.out.println("Lions can Move");
+    }
+
+    @Override
+    public void canHunt() {
+        System.out.println("Lions are hunters");
 
     }
 
     @Override
+    public void iCanBreath() {
+        System.out.println("Lions can Breath");
+    }
+
+    @Override
     public void iCanEat() {
-        System.out.println("Lion can Eat");
+        System.out.println("Lions can Eat");
 
     }
 
     @Override
     public void iCanDie() {
-        System.out.println("Lion can Die");
-
+        System.out.println("Lions can Die");
     }
 
     @Override
     public void iCanBreed() {
-        System.out.println("Lion can Breed");
+        System.out.println("Lions can Breed");
+    }
+
+    @Override
+    public void produceMilkForFeedingTheirYoung() {
+        System.out.println("Lions feeding their young with milk");
 
     }
 
     @Override
-    public void animalsCanMove() {
-        System.out.println("Lion can Move");
-
+    public void haveSpine() {
+        System.out.println("Lions have spin");
     }
-
-    @Override
-    public void coldBlooded() {
-        System.out.println("Lions are not cold-blooded animals");
-
-    }
-
-    @Override
-    public void haveNumberOfShape() {
-        System.out.println("Lion can be different size");
-
-    }
-
-    @Override
-    public void canFly() {
-        System.out.println("Lions can not fly");
-
-    }
-
-    @Override
-    public void Swims() {
-        System.out.println("Lions can swim");
-
-    }
-
-    @Override
-    public void freeLivingInSoilOrWater() {
-        System.out.println("Lions can live just on soil");
-
-    }
-
-    @Override
-    public void growIndoorOutdoor() {
-        System.out.println("Lions can grow indoor and outdoor");
-
-    }
-
-    @Override
-    public void crawling() {
-        System.out.println("Lions cant crawling");
-    }
-
 
 
 

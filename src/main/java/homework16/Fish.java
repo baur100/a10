@@ -1,5 +1,5 @@
 package homework16;
 
-public interface Fish {
+public interface Fish extends Vertebrates{
     void Swims();
 }

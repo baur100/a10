@@ -1,6 +1,6 @@
 package homework16;
 
-public interface Life extends Fungi, Bacteria, Plants, Animals {
+public interface Life {
     void iCanBreath();
     void iCanEat();
     void iCanDie();

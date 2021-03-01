@@ -8,23 +8,34 @@ public class Home16 {
         Wolf wolf1 = new Wolf();
         BlueWhale blueWhale = new BlueWhale();
 
-        lion1.coldBlooded();
-        wolf1.crawling();
-        blueWhale.canFly();
+        lion1.haveSpine();
+        lion1.canHunt();
+        lion1.animalsCanMove();
+        lion1.iCanBreed();
+        lion1.iCanDie();
+        lion1.iCanBreath();
+        lion1.iCanEat();
+        lion1.produceMilkForFeedingTheirYoung();
+
+        blueWhale.produceMilkForFeedingTheirYoung();
+        blueWhale.haveSpine();
+        blueWhale.canHunt();
         blueWhale.animalsCanMove();
-        lion1.haveNumberOfShape();
-        wolf1.Swims();
-        blueWhale.freeLivingInSoilOrWater();
-        blueWhale.growIndoorOutdoor();
+        blueWhale.iCanBreed();
+        blueWhale.iCanDie();
+        blueWhale.iCanBreath();
+        blueWhale.iCanEat();
+
+        wolf1.produceMilkForFeedingTheirYoung();
+        wolf1.haveSpine();
+        wolf1.canHunt();
+        wolf1.animalsCanMove();
+        wolf1.iCanBreed();
+        wolf1.iCanDie();
+        wolf1.iCanBreath();
+        wolf1.iCanEat();
 
 
-        Life animal1 = new Lion();
-        Life animal2 = new BlueWhale();
-        Life animal3 = new Wolf();
-        Life[] animalsLives = {animal1, animal2, animal3};
-        for (Life al : animalsLives) {
-            al.iCanBreath();
-        }
 
 
     }

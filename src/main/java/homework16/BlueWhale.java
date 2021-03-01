@@ -1,77 +1,48 @@
 package homework16;
 
-public class BlueWhale implements Life {
-    public BlueWhale() {
+public class BlueWhale extends Carnivores {
+
+    @Override
+    public void animalsCanMove() {
+        System.out.println("BlueWhales can Move");
+    }
+
+    @Override
+    public void canHunt() {
+        System.out.println("BlueWhales can hunt");
+
     }
 
     @Override
     public void iCanBreath() {
-        System.out.println("BlueWhale can Breath");
-
+        System.out.println("BlueWhales are Breathing");
     }
 
     @Override
     public void iCanEat() {
-        System.out.println("BlueWhale can Eat");
+        System.out.println("BlueWhales are Eating");
 
     }
 
     @Override
     public void iCanDie() {
-        System.out.println("BlueWhale can Die");
-
+        System.out.println("BlueWhales can Die");
     }
 
     @Override
     public void iCanBreed() {
-        System.out.println("BlueWhale can Breed");
+        System.out.println("BlueWhales can Breed");
+    }
+
+    @Override
+    public void produceMilkForFeedingTheirYoung() {
+        System.out.println("BlueWhales not feeding their young with milk");
 
     }
 
     @Override
-    public void animalsCanMove() {
-        System.out.println("BlueWhale can Move");
-    }
-
-    @Override
-    public void coldBlooded() {
-        System.out.println("BlueWhale is a cold-blooded");
+    public void haveSpine() {
+        System.out.println("BlueWhales have backbone that goes from the skull to the tail");
 
     }
-
-    @Override
-    public void haveNumberOfShape() {
-        System.out.println("BlueWhale can be different sizes");
-
-    }
-
-    @Override
-    public void canFly() {
-        System.out.println("BlueWhale can not fly");
-
-    }
-
-    @Override
-    public void Swims() {
-        System.out.println("BlueWhale is swimming");
-
-    }
-
-    @Override
-    public void freeLivingInSoilOrWater() {
-        System.out.println("Whale cant live out of water");
-
-    }
-
-    @Override
-    public void growIndoorOutdoor() {
-        System.out.println("Whale grows in the water");
-
-    }
-
-    @Override
-    public void crawling() {
-        System.out.println("Whale can not crawling");
-    }
-
 }
