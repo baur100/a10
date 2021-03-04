@@ -27,6 +27,5 @@ public class UdemyTest {
 
         driver.quit();
 
-
     }
 }
