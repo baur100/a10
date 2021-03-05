@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,14 +15,14 @@ public class LoginPage {
         wait= new WebDriverWait(driver,10);
     }
     private WebElement getEmailField(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[type='email']")));
-        return driver.findElement(By.cssSelector("[type='email']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.email));
+        return driver.findElement(LoginPageLocators.email);
     }
     private WebElement getPasswordField(){
-        return driver.findElement(By.xpath("//*[@type='password']"));
+        return driver.findElement(LoginPageLocators.password);
     }
     private WebElement getLoginButton(){
-        return driver.findElement(By.cssSelector("button"));
+        return driver.findElement(LoginPageLocators.button);
     }
     public MainPage loginToApplication(String username,String password){
         getEmailField().sendKeys(username);
@@ -36,8 +35,8 @@ public class LoginPage {
     }
 
     private WebElement getError(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".error")));
-        return driver.findElement(By.cssSelector(".error"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.error));
+        return driver.findElement(LoginPageLocators.error);
     }
     public boolean isError() {
         try {

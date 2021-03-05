@@ -24,6 +24,14 @@ public class MainPage {
         } catch (TimeoutException ignored){
             return false;
         }
+    }
+    public String createPlaylist(String name){
 
+        return "xxxx";
+    }
+
+    public boolean isPlaylistExist(String playlistId, String playlistName) {
+        // scroll page down
+        return true; // if element is displayed
     }
 }
