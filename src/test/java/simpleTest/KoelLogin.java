@@ -3,6 +3,7 @@ package simpleTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +13,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class KoelLogin {
     private WebDriver driver;
@@ -39,7 +39,6 @@ public class KoelLogin {
     }
     @Test
     public void koelLogin_LoginToAppUsingCorrectCredintials_SuccessfulLogin() throws InterruptedException {
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@type='email']")));
         WebElement emailField = driver.findElement(By.xpath("//*[@type='email']"));
         WebElement passwordField = driver.findElement(By.cssSelector("[placeholder='Password']"));
