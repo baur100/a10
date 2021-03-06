@@ -24,7 +24,7 @@ public class PlaylistTests {
     }
     @Test
     public void playlist_createPlaylistTest(){
-        String playlistName = "XXX";
+        String playlistName = "WER";
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         MainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
