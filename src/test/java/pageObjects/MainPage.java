@@ -1,22 +1,28 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class MainPage extends BasePage{
     public MainPage(WebDriver driver) {
-        this.driver=driver;
-        wait = new WebDriverWait(driver,10);
+        super(driver);
     }
     private WebElement getHomeButton(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".home")));
         return driver.findElement(By.cssSelector(".home"));
+    }
+    private void clickPlusButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".fa-plus-circle")));
+        for(int i=0;i<5;i++){
+            try{
+                driver.findElement(By.cssSelector(".fa-plus-circle")).click();
+                break;
+            } catch (ElementClickInterceptedException ignored){}
+        }
+    }
+
+    private WebElement getNewPlaylistField(){
+        return driver.findElement(By.xpath("//*[@class='create']/input"));
     }
     public boolean isMainPage(){
         try{
@@ -26,12 +32,22 @@ public class MainPage {
         }
     }
     public String createPlaylist(String name){
-
-        return "xxxx";
+        clickPlusButton();
+        getNewPlaylistField().sendKeys(name);
+        getNewPlaylistField().sendKeys(Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".success.show")));
+        return driver.getCurrentUrl().split("/")[5];
     }
 
     public boolean isPlaylistExist(String playlistId, String playlistName) {
-        // scroll page down
-        return true; // if element is displayed
+        WebElement newPlaylist = driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", newPlaylist);
+
+        return newPlaylist.getText().equals(playlistName) && newPlaylist.isDisplayed();
+
+    }
+
+    public void renamePlaylist(String playlistId, String newName) {
     }
 }
