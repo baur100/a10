@@ -19,4 +19,46 @@ public class LoginTest extends BaseTest{
         loginPage.loginToApplication("koeluser06@testpro.io","WrongPassword");
         Assert.assertTrue(loginPage.isError());
     }
+    @Test
+    public void loginTest_loginToAppUsingCorrectCredentials1(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        MainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
+        Assert.assertTrue(mainPage.isMainPage());
+    }
+    @Test
+    public void loginTest_loginToAppUsingWrongCredentials1(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        loginPage.loginToApplication("koeluser06@testpro.io","WrongPassword");
+        Assert.assertTrue(loginPage.isError());
+    }
+    @Test
+    public void loginTest_loginToAppUsingCorrectCredentials2(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        MainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
+        Assert.assertTrue(mainPage.isMainPage());
+    }
+    @Test
+    public void loginTest_loginToAppUsingWrongCredentials2(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        loginPage.loginToApplication("koeluser06@testpro.io","WrongPassword");
+        Assert.assertTrue(loginPage.isError());
+    }
+    @Test
+    public void loginTest_loginToAppUsingCorrectCredentials3(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        MainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
+        Assert.assertTrue(mainPage.isMainPage());
+    }
+    @Test
+    public void loginTest_loginToAppUsingWrongCredentials3(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        loginPage.loginToApplication("koeluser06@testpro.io","WrongPassword");
+        Assert.assertTrue(loginPage.isError());
+    }
 }

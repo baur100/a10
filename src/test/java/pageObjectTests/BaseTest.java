@@ -12,13 +12,11 @@ public class BaseTest {
     protected Faker faker;
     @BeforeMethod
     public void startUp(){
-
-        driver = BrowserFabric.getDriver(BrowserType.EDGE);
+        driver = BrowserFabric.getDriver(BrowserType.FIREFOX);
         faker = new Faker();
     }
     @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
+    public void tearDown(){
         driver.quit();
     }
 }

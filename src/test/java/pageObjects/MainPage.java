@@ -49,7 +49,6 @@ public class MainPage extends BasePage{
         js.executeScript("arguments[0].scrollIntoView();", newPlaylist);
 
         return newPlaylist.getText().equals(playlistName) && newPlaylist.isDisplayed();
-
     }
 
     public void renamePlaylist(String playlistId, String newName) {
