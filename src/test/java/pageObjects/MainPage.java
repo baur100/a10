@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage{
@@ -31,6 +32,9 @@ public class MainPage extends BasePage{
             return false;
         }
     }
+    private WebElement getEditField(){
+        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
+    }
     public String createPlaylist(String name){
         clickPlusButton();
         getNewPlaylistField().sendKeys(name);
@@ -49,5 +53,14 @@ public class MainPage extends BasePage{
     }
 
     public void renamePlaylist(String playlistId, String newName) {
+        WebElement playlist = driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", playlist);
+        Actions actions = new Actions(driver);
+        actions.doubleClick(playlist).perform();
+        getEditField().sendKeys(Keys.CONTROL+"a");
+        getEditField().sendKeys(newName);
+        getEditField().sendKeys(Keys.ENTER);
+
     }
 }
