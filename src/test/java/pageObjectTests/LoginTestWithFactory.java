@@ -1,14 +1,15 @@
 package pageObjectTests;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import myPageObjects.MyMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.LoginPage;
-import pageObjects.LoginPageFactory;
-import pageObjects.MainPage;
+import myPageObjects.LoginPage;
+import myPageObjects.LoginPageFactory;
+import myPageObjects.MyMainPage;
 
 public class LoginTestWithFactory {
     private WebDriver driver;
@@ -26,7 +27,7 @@ public class LoginTestWithFactory {
     public void loginTestFactory_loginToAppUsingCorrectCredentials(){
         LoginPageFactory loginPage = new LoginPageFactory(driver);
         loginPage.open();
-        MainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
+        MyMainPage mainPage = loginPage.loginToApplication("koeluser06@testpro.io","te$t$tudent");
         Assert.assertTrue(mainPage.isMainPage());
     }
     @Test

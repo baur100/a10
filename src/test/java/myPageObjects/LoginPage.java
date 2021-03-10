@@ -1,30 +1,28 @@
 package myPageObjects;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    private WebDriver driver;
-    WebDriverWait wait;
+
+public class LoginPage extends BasePage{
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 200);
+        super(driver);
     }
 
     private WebElement getEmailField() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[type='email']")));
-        return driver.findElement(By.cssSelector("[type='email']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.email));
+        return driver.findElement(LoginPageLocators.email);
     }
     private  WebElement getPassword() {
-        return driver.findElement(By.cssSelector("[type='password']"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.password));
+        return driver.findElement(LoginPageLocators.password);
     }
     private WebElement getButton() {
-        return driver.findElement(By.cssSelector("button"));
+        return driver.findElement(LoginPageLocators.button);
     }
 
     public MyMainPage loginToApp(String username, String password) {
@@ -39,8 +37,7 @@ public class LoginPage {
         driver.get("https://koelapp.testpro.io/");
     }
     private WebElement getError() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".error")));
-        return driver.findElement(By.cssSelector(".error"));
+        return driver.findElement(LoginPageLocators.error);
     }
 
     public boolean isError() {

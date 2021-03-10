@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import seleniumTest.BaseTest;
 
 public class LoginPageFactory {
     private WebDriver driver;
@@ -15,7 +15,7 @@ public class LoginPageFactory {
     @FindBy(css = "[type='email']")
     private WebElement email;
 
-    @FindBy(xpath = "//*[type='password']")
+    @FindBy(xpath = "//*[@type='password']")
     private WebElement password;
 
     @FindBy(tagName = "button")
@@ -27,7 +27,8 @@ public class LoginPageFactory {
     public LoginPageFactory(WebDriver driver) {
         this.driver = driver;
 //        wait = new WebDriverWait(driver, 10);
-        PageFactory.initElements(driver, this);
+        AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+        PageFactory.initElements(factory, this);
     }
 
     public void open() {
@@ -46,12 +47,19 @@ public class LoginPageFactory {
 
     }
 
-//    public boolean isError() {
-//        try {
-//            return getError().isDisplayed();
-//        } catch (TimeoutException ignored) {return false;}
-//
-//    }
+    public MyMainPage loginToApplication(String username, String password) {
+        email.sendKeys(username);
+        this.password.sendKeys(password);
+        button.click();
+        return new MyMainPage(driver);
+    }
+
+    public boolean isError() {
+        try {
+            return error.isDisplayed();
+        } catch (TimeoutException ignored) {return false;}
+
+    }
 
 
 }
