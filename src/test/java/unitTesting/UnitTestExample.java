@@ -19,9 +19,7 @@ public class UnitTestExample {
     @Test
     public void calculateTicketPrice_child_50percent(){
         CalculateTicketPrice child = new CalculateTicketPrice(1000,10);
-
         double price = child.getPrice();
-
         Assert.assertEquals(price,500.0);
     }
     @Test
