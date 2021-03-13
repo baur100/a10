@@ -1,9 +1,14 @@
 package seleniumTest;
 
+import MyListnerers.RetryAnalyzer;
+import myPageObjects.LoginPage;
+import myPageObjects.LoginPageFactory;
 import myPageObjects.LoginPageLocators;
+import myPageObjects.MyMainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,33 +20,63 @@ public class KoelLogin extends BaseTest{
 
     @Test
     public void koelLogin_LoginToAppUsingRightCredentials() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.email));
-        WebElement email = driver.findElement(LoginPageLocators.email);
-        WebElement password = driver.findElement(LoginPageLocators.password);
-        WebElement button = driver.findElement(LoginPageLocators.button);
-
-        email.sendKeys("koeluser06@testpro.io");
-        password.sendKeys("te$t$tudent");
-        button.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='home active']")));
-        WebElement homeIcon = driver.findElement(By.xpath("//*[@class='home active']"));
-        Assert.assertTrue(homeIcon.isDisplayed());
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password);
+        Assert.assertTrue(mainPage.isMainPage());
 
     }
 
     @Test
     public void koelLogin_LoginToAppUsingWrongCredentials() {
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@type='email']")));
-        WebElement email = driver.findElement(By.xpath("//*[@type='email']"));
-        WebElement password = driver.findElement(By.xpath("//*[@type='password']"));
-        WebElement button = driver.findElement(By.cssSelector("button"));
-
-        email.sendKeys("koeluser06@testpro.io");
-        password.sendKeys("te$t$tuden2t");
-        button.click();
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='error']")));
-        WebElement errorBorder = driver.findElement(By.xpath("//*[@class='error']"));
-        Assert.assertTrue(errorBorder.isDisplayed());
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password+"t");
+        Assert.assertTrue(loginPage.isError());
 
     }
+
+    @Test
+    public void koelLogin_LoginToAppUsingRightCredentials1() {
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password);
+        Assert.assertTrue(mainPage.isMainPage());
+
+    }
+
+    @Test
+    public void koelLogin_LoginToAppUsingWrongCredentials1() {
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password+"t");
+        Assert.assertTrue(loginPage.isError());
+
+    }
+
+    @Test
+    public void koelLogin_LoginToAppUsingRightCredentials2() {
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password);
+        Assert.assertTrue(mainPage.isMainPage());
+
+    }
+
+    @Test
+    public void koelLogin_LoginToAppUsingWrongCredentials2() {
+        LoginPageFactory loginPage = new LoginPageFactory(driver);
+        loginPage.open();
+        MyMainPage mainPage = loginPage.loginToApp(username,password+"t");
+        Assert.assertTrue(loginPage.isError());
+
+    }
+    private int count = 0;
+    @Test (retryAnalyzer = RetryAnalyzer.class)
+
+    public void flakyTestExample (){
+        Assert.assertEquals(count++, 2);
+    }
+
+
 }

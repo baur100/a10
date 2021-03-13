@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage{
 
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -18,8 +19,8 @@ public class LoginPage extends BasePage{
         return driver.findElement(LoginPageLocators.email);
     }
     private  WebElement getPassword() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.password));
-        return driver.findElement(LoginPageLocators.password);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.passwordField));
+        return driver.findElement(LoginPageLocators.passwordField);
     }
     private WebElement getButton() {
         return driver.findElement(LoginPageLocators.button);
@@ -37,6 +38,7 @@ public class LoginPage extends BasePage{
         driver.get("https://koelapp.testpro.io/");
     }
     private WebElement getError() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.error));
         return driver.findElement(LoginPageLocators.error);
     }
 

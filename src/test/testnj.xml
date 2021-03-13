@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Master Suite" parallel="classes">
+    <parameter name="email" value="thetest@email.com"/>
+    <parameter name="password" value="te$t$tudent"/>
+    <test name = "All tests">
+        <classes>
+            <class name="seleniumTest.KoelLogin">
+                <methods>
+                    <exclude name="koelLogin_LoginToAppUsingRightCredentials"/>
+                    <include name="koelLogin_LoginToAppUsingWrongCredentials"/>
+                    <include name="koelLogin_LoginToAppUsingRightCredentials1"/>
+                    <include name="koelLogin_LoginToAppUsingWrongCredentials1"/>
+                    <include name="koelLogin_LoginToAppUsingRightCredentials2"/>
+                    <include name="koelLogin_LoginToAppUsingWrongCredentials2"/>
+                    <include name="flakyTestExample" />
+                </methods>
+            </class>
+            <class name="seleniumTest.MyLoginTestRefactory">
+                <methods>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials"/>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials1"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials1"/>
+                </methods>
+            </class>
+            <class name="seleniumTest.PlaylistTest">
+                <methods>
+                    <include name="createPlayList"/>
+                    <include name="renamePlayList"/>
+                    <include name="createPlayList1"/>
+                    <include name="renamePlayList1"/>
+                    <include name="createPlayList2"/>
+                    <include name="renamePlayList2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
