@@ -1,13 +1,17 @@
 package pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage{
+    Logger logger = LogManager.getLogger(LoginPage.class);
     public LoginPage(WebDriver driver) {
         super(driver);
+        logger.debug("Login page object created");
     }
     private WebElement getEmailField(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageLocators.email));

@@ -1,10 +1,13 @@
 package pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends BasePage{
+    Logger logger = LogManager.getLogger(MainPage.class);
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -18,7 +21,9 @@ public class MainPage extends BasePage{
             try{
                 driver.findElement(By.cssSelector(".fa-plus-circle")).click();
                 break;
-            } catch (ElementClickInterceptedException ignored){}
+            } catch (ElementClickInterceptedException err){
+                logger.fatal("Exception + "+err.getMessage());
+            }
         }
     }
 
@@ -36,6 +41,7 @@ public class MainPage extends BasePage{
         return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
     }
     public String createPlaylist(String name){
+        logger.info("Playlist name = "+name);
         clickPlusButton();
         getNewPlaylistField().sendKeys(name);
         getNewPlaylistField().sendKeys(Keys.ENTER);
@@ -52,6 +58,7 @@ public class MainPage extends BasePage{
     }
 
     public void renamePlaylist(String playlistId, String newName) {
+        logger.debug("New name = "+newName);
         WebElement playlist = driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", playlist);
