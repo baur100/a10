@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Master Suite" parallel="classes" thread-count="3">
+    <parameter name="email" value="thetest@email.com"/>
+    <parameter name="password" value="te$t$tudent"/>
+    <parameter name="browser" value="chrome"/>
+    <test name="All tests">
+        <classes>
+            <class name="pageObjectTests.LoginTest">
+                <methods>
+                    <exclude name="loginTest_loginToAppUsingCorrectCredentials"/>
+                    <exclude name="loginTest_loginToAppUsingWrongCredentials"/>
+                    <include name="loginTest_loginToAppUsingCorrectCredentials1"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials1"/>
+                    <include name="loginTest_loginToAppUsingCorrectCredentials2"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials2"/>
+                    <include name="loginTest_loginToAppUsingCorrectCredentials3"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials3"/>
+                    <include name="flakyTestExample"/>
+                </methods>
+            </class>
+            <class name="pageObjectTests.LoginTestWithFactory">
+                <methods>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials"/>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials1"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials1"/>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials2"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials2"/>
+                    <include name="loginTestFactory_loginToAppUsingCorrectCredentials3"/>
+                    <include name="loginTest_loginToAppUsingWrongCredentials3"/>
+                </methods>
+            </class>
+            <class name="pageObjectTests.PlaylistTests">
+                <methods>
+                    <include name="playlist_createPlaylistTest"/>
+                    <include name="playlist_renamePlaylistTest"/>
+                    <include name="playlist_createPlaylistTest1"/>
+                    <include name="playlist_renamePlaylistTest1"/>
+                    <include name="playlist_createPlaylistTest2"/>
+                    <include name="playlist_renamePlaylistTest2"/>
+                    <include name="playlist_createPlaylistTest3"/>
+                    <include name="playlist_renamePlaylistTest3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

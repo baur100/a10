@@ -3,6 +3,7 @@
 <suite name="Master Suite" parallel="classes" thread-count="3">
     <parameter name="email" value="thetest@email.com"/>
     <parameter name="password" value="te$t$tudent"/>
+    <parameter name="browser" value="firefox"/>
     <test name="All tests">
         <classes>
             <class name="pageObjectTests.LoginTest">
