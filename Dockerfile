@@ -11,10 +11,8 @@ RUN apt-get install -y p7zip \
     xdg-utils
 
 #Version numbers
-ARG FIREFOX_VERSION=85.0.2
 ARG CHROME_VERSION=89.0.4389.90
 ARG CHROMDRIVER_VERSION=89.0.4389.23
-ARG FIREFOXDRIVER_VERSION=0.28.0
 
 #Step 2: Install Chrome
 RUN curl http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_$CHROME_VERSION-1_amd64.deb -o /chrome.deb
@@ -27,21 +25,9 @@ RUN curl https://chromedriver.storage.googleapis.com/$CHROMDRIVER_VERSION/chrome
     && unzip /tmp/chromedriver.zip -d /app/ \
     && rm /tmp/chromedriver.zip
 RUN chmod +x /app/chromedriver
-#Step 4 : Install firefox
-RUN wget --no-verbose -O /tmp/firefox.tar.bz2 https://download-installer.cdn.mozilla.net/pub/firefox/releases/$FIREFOX_VERSION/linux-x86_64/en-US/firefox-$FIREFOX_VERSION.tar.bz2 \
-  && bunzip2 /tmp/firefox.tar.bz2 \
-  && tar xvf /tmp/firefox.tar \
-  && mv /firefox /opt/firefox-$FIREFOX_VERSION \
-  && ln -s /opt/firefox-$FIREFOX_VERSION/firefox /usr/bin/firefox
-#Step 5: Install Geckodriver
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v$FIREFOXDRIVER_VERSION/geckodriver-v$FIREFOXDRIVER_VERSION-linux64.tar.gz \
-    && tar -xf geckodriver-v$FIREFOXDRIVER_VERSION-linux64.tar.gz \
-    && cp geckodriver /app/geckodriver
-RUN chmod +x /app/geckodriver
 
 COPY ./pom.xml /app
 COPY testngChrome.xml /app
-COPY testngFirefox.xml /app
 WORKDIR /app
 # RUN mvn dependency:resolve
 

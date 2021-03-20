@@ -27,7 +27,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testngFirefox.xml</suiteXmlFile>
+                        <suiteXmlFile>testngChrome.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
