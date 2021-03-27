@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "8f05b1c0-424e-416b-994f-0ccb80e0cd0e",
+		"name": "Koel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseBody1 = pm.response.json();\r",
+							"console.log(responseBody1);\r",
+							"\r",
+							"pm.test('Assert that response is 200', () =>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"pm.test('Assert that respnse has key \"token\"',()=>{\r",
+							"    pm.expect(responseBody1).to.have.key('token')\r",
+							"})\r",
+							"\r",
+							"pm.test('Assert it is a String', ()=>{\r",
+							"    pm.expect(responseBody1.token).to.be.a('string')\r",
+							"})\r",
+							"\r",
+							"pm.environment.set('theToken', responseBody1.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "identheader",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{username}}\",\r\n    \"password\": \"te$t$tudent\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/me",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseBody1 = pm.response.json();\r",
+							"console.log(responseBody1);\r",
+							"\r",
+							"pm.test('Assert that response is 200', () =>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{theToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}api/data",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
