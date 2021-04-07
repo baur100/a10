@@ -4,13 +4,14 @@
     <listeners>
         <listener class-name="listeners.Listeners" />
     </listeners>
-    <parameter name="email" value="thetest@email.com"/>
+    <parameter name="email" value="koeluser06@testpro.io"/>
     <parameter name="password" value="te$t$tudent"/>
+    <parameter name="browser" value="chrome"/>
     <test name="All tests">
         <classes>
-            <class name="pageObjectTests.PlaylistTests">
+            <class name="pageObjectTests.HybridTestApiSelenium">
                 <methods>
-                    <include name="playlist_renamePlaylistTest"/>
+                    <include name="renamePlaylist"/>
                 </methods>
             </class>
         </classes>

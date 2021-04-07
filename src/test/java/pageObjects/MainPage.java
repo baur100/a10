@@ -58,6 +58,7 @@ public class MainPage extends BasePage{
     }
 
     public void renamePlaylist(String playlistId, String newName) {
+        wait.until(ExpectedConditions.visibilityOf(getHomeButton()));
         logger.debug("New name = "+newName);
         WebElement playlist = driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
