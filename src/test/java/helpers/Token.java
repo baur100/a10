@@ -11,7 +11,7 @@ public class Token {
         Credentials cred = new Credentials("koeluser06@testpro.io","te$t$tudent");
         Response response =
                 given()
-                        .baseUri("https://koelapp.testpro.io/")
+                        .baseUri("https://bbb.testpro.io/")
                         .basePath("api/me")
                         .header("accept","application/json")
                         .header("Content-Type","application/json")

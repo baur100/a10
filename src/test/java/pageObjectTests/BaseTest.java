@@ -22,7 +22,9 @@ public class BaseTest {
     @BeforeMethod
     public void startUp(String username,String password, String browser){
         BrowserType browserType = browser.equals("chrome") ? BrowserType.CHROME : BrowserType.FIREFOX;
+
         driver = BrowserFabric.getDriver(browserType);
+        System.out.println("Driver created");
         faker = new Faker();
         this.username = username;
         this.password = password;

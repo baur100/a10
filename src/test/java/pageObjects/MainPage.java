@@ -38,7 +38,7 @@ public class MainPage extends BasePage{
         }
     }
     private WebElement getEditField(){
-        return driver.findElement(By.xpath("//*[@class='playlist playlist editing']/input"));
+        return driver.findElement(By.xpath("//*[@type='text']"));
     }
     public String createPlaylist(String name){
         logger.info("Playlist name = "+name);
@@ -59,15 +59,28 @@ public class MainPage extends BasePage{
 
     public void renamePlaylist(String playlistId, String newName) {
         wait.until(ExpectedConditions.visibilityOf(getHomeButton()));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ig){}
         logger.debug("New name = "+newName);
         WebElement playlist = driver.findElement(By.xpath("//*[@href='#!/playlist/"+playlistId+"']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", playlist);
-        Actions actions = new Actions(driver);
-        actions.doubleClick(playlist).perform();
-        getEditField().sendKeys(Keys.CONTROL+"a");
+        doubleClick(playlist);
         getEditField().sendKeys(newName);
         getEditField().sendKeys(Keys.ENTER);
 
+    }
+    public void doubleClick(WebElement playlist){
+        Actions actions = new Actions(driver);
+        actions.doubleClick(playlist).perform();
+        for (int i = 0;i<55;i++){
+            try {
+                getEditField().sendKeys(Keys.CONTROL+"a");
+                break;
+            } catch (ElementNotInteractableException ignored){
+                System.out.println("bbad");
+            }
+        }
     }
 }

@@ -9,9 +9,9 @@
     <parameter name="browser" value="chrome"/>
     <test name="All tests">
         <classes>
-            <class name="pageObjectTests.HybridTestApiSelenium">
+            <class name="pageObjectTests.HybridTestWithDb">
                 <methods>
-                    <include name="renamePlaylist"/>
+                    <include name="renamePlaylist_playlistRenamed"/>
                 </methods>
             </class>
         </classes>

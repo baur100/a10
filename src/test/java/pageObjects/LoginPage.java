@@ -30,7 +30,7 @@ public class LoginPage extends BasePage{
         return new MainPage(driver);
     }
     public void open(){
-        driver.get("https://koelapp.testpro.io/");
+        driver.get("https://bbb.testpro.io/");
     }
 
     private WebElement getError(){

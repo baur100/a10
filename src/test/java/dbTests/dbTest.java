@@ -1,7 +1,9 @@
 package dbTests;
 
 import helpers.DbAdapter;
+import models.Artist;
 import models.Playlist;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -18,7 +20,17 @@ public class dbTest {
     public void getPlaylistById(){
         Playlist pl = DbAdapter.getPlaylistsById(156);
         System.out.println(pl.getName());
-
+    }
+    @Test
+    public void getArtists(){
+        List<Artist> art = null;
+        try {
+            art = DbAdapter.getArtists();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        Assert.assertNotNull(art);
+        Assert.assertEquals(art.size(),55);
     }
 }
 
