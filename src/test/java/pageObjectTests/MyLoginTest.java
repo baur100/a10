@@ -11,21 +11,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class MyLoginTest {
+public class MyLoginTest extends BaseTest{
 
-    private WebDriver driver;
 
-    @BeforeMethod
-    public void startUp() {
-
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-    }
 
     @Test
 

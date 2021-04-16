@@ -1,5 +1,8 @@
 package pageObjectTests;
 
+import Helpers.BrowserFabric;
+import com.github.javafaker.Faker;
+import enums.BrowserType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,18 +13,8 @@ import org.testng.annotations.Test;
 import myPageObjects.LoginPage;
 import myPageObjects.MyMainPage;
 
-public class PlaylistTests {
-    private WebDriver driver;
-    @BeforeMethod
-    public void startUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-    }
+public class PlaylistTests extends BaseTest{
+
 //    @Test
 //    public void playlist_createPlaylistTest(){
 //        String playlistName = "XXX";

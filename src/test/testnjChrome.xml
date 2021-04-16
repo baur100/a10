@@ -3,6 +3,7 @@
 <suite name="Master Suite" parallel="classes">
     <parameter name="email" value="thetest@email.com"/>
     <parameter name="password" value="te$t$tudent"/>
+    <parameter name="browser" value="chrome"/>
     <test name = "All tests">
         <classes>
             <class name="seleniumTest.KoelLogin">

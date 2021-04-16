@@ -2,7 +2,7 @@ package pageObjectTests;
 
 import com.github.javafaker.Faker;
 import enums.BrowserType;
-import helpers.BrowserFabric;
+import Helpers.BrowserFabric;
 import helpers.Screenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -18,10 +18,11 @@ public class BaseTest {
     protected Faker faker;
     protected String username;
     protected String password;
-    @Parameters({"email","password"})
+    @Parameters({"email","password","browser"})
     @BeforeMethod
-    public void startUp(String username,String password){
-        driver = BrowserFabric.getDriver(BrowserType.CHROME);
+    public void startUp(String username,String password, String browser){
+        BrowserType browserType = browser.equals("chrome") ? BrowserType.CHROME : BrowserType.FIREFOX;
+//        driver = BrowserFabric.getDriver(browserType);
         faker = new Faker();
         this.username = username;
         this.password = password;

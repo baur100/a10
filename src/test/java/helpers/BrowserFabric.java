@@ -1,4 +1,4 @@
-package helpers;
+package Helpers;
 
 import enums.BrowserType;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -34,7 +34,7 @@ public class BrowserFabric {
         options.addArguments("--width=1400");
         options.addArguments("--height=1000");
         WebDriverManager.firefoxdriver().setup();
-        return new FirefoxDriver();
+        return new FirefoxDriver(options);
     }
 
     private static WebDriver getOperaDriver() {
